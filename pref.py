@@ -92,7 +92,8 @@ class Preferences(wx.Dialog):
         pass
     
     def CheckUPX(self):
-        if os.path.exists(self.upx.GetValue() + '\\upx.exe') or self.upx.GetValue() == '':
+        upxname = 'upx.exe' # Fix this for non-Windows platforms
+        if os.path.exists(os.path.join(self.upx.GetValue(),upxname)) or self.upx.GetValue() == '':
             return True
         else:
             dial = wx.MessageDialog(None, 'UPX.exe not found. Please check path and try again, or leave blank.',
@@ -103,7 +104,7 @@ class Preferences(wx.Dialog):
             return False
         
     def CheckPyi(self):
-        if os.path.exists(self.pyi.GetValue() + '\\pyinstaller.py'):
+        if os.path.exists(os.path.join(self.pyi.GetValue() , 'pyinstaller.py')):
             return True
         else:
             dial = wx.MessageDialog(None, 'pyinstaller.py not found. Please check path.',

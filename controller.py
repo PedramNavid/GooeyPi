@@ -20,7 +20,8 @@ def createConfig():
     config['singlefile'] = False
     config['ascii'] = False
     config['windowed'] = False
-    config['upxdir'] = 'C:\\upx'
+    config['upxdir'] = ''
+    config['pyidir'] = ''
     config.write()
  
 #----------------------------------------------------------------------

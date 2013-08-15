@@ -99,9 +99,9 @@ class GooeyPi(wx.Frame):
         pass
     
     def OnSubmit(self, e):
-        flags = ['python']
+        flags = ['python2'] # TODO: fallback to python if python2 is not available
         config = controller.getConfig()
-        flags.append(config['pyidir'] + '\\pyinstaller.py')
+        flags.append(os.path.join(config['pyidir'], 'pyinstaller.py'))
         if config['noconfirm']:
             flags.append('--noconfirm')
         if config['singlefile']:
@@ -112,7 +112,7 @@ class GooeyPi(wx.Frame):
             flags.append('--noconsole')
         if config['upxdir'] != '':
             flags.append('--upx-dir=' + config['upxdir'])
-        flags.append('--out=' + os.path.dirname(self.fbb.GetValue())) # Output to same dir as script. 
+        flags.append('--distpath=' + os.path.dirname(self.fbb.GetValue())) # Output to same dir as script. 
         if self.fbb.GetValue() == '':
             dlg = wx.MessageDialog(None, 'No File Selected! Please select a Python script before proceeding',
                                      'No file selected', 
