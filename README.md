@@ -11,7 +11,7 @@ Required
 --------
 wxPython >= 2.9.4.0
 Python >= 2.7.3 (not compatible with Python3)
-PyInstaller >= 2.0
+PyInstaller >= 2.1 
 
 Optional
 --------
@@ -35,5 +35,8 @@ To Do
 =====
 - Move the pyinstaller subprocess to its own thread
 - Provide option for manual flags
-- Test on Linux / Mac
-- Fix some bad path code (should be using os.path.join)
+- Test on ~~Linux~~ / Mac
+- ~~Fix some bad path code (should be using os.path.join)~~
+- Fix preferences not saving on Linux
+- Fix pyinstaller path not saving
+- Autodetect Python2 command line. 
