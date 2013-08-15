@@ -6,25 +6,24 @@ Currently only tested on Windows, but plan on testing on Linux and Mac OS X shor
 
 
 Prerequisites
-=============
-Required
---------
+------------
+
+*Required*
 wxPython >= 2.9.4.0
 Python >= 2.7.3 (not compatible with Python3)
 PyInstaller >= 2.1 
 
-Optional
---------
+*Optional*
 UPX >=3.09
 
 
 Installation
-============
+------------
 No installation needed. Just clone/download and run: python gooeypi.py
 You may need to use: python2 googlepi.py if you have Python3 installed. 
 
 Usage
-=====
+-----
 - Click Options.
 - Select your Pyinstaller directory, and optionally, your UPX directory.
 - Select any flags you wish to pass to the installer. 
@@ -32,7 +31,7 @@ Usage
 - Your dist folder and binary will be in the same folder as your Python script.
 
 To Do
-=====
+-----
 - Move the pyinstaller subprocess to its own thread
 - Provide option for manual flags
 - Test on ~~Linux~~ / Mac
