@@ -78,6 +78,7 @@ class Preferences(wx.Dialog):
             config['ascii'] = self.cbascii.GetValue()
             config['windowed'] = self.cbwindowed.GetValue()
             config['upxdir'] = self.upx.GetValue()
+            config['pyidir'] = self.pyi.GetValue()
             logging.info("Preferences Saved")
             config.write()
             self.Destroy()
