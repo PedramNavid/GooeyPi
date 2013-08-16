@@ -44,6 +44,7 @@ class GooeyPi(wx.Frame):
         self.SetSize((460,350))
         self.SetTitle('GooeyPi - PyInstaller GUI')
         self.Show()
+        self.CheckFirstRun()
         
     def InitUI(self):
         logging.debug('Initializing UI')
@@ -97,6 +98,13 @@ class GooeyPi(wx.Frame):
 
     def fbbCallback(self, e):
         pass
+
+    def CheckFirstRun(self):
+        dlg = wx.MessageDialog(None, 'Looks like this is your first run of GooeyPi.\n\
+Please select the Pyinstaller directory.', 'FIrst load', wx.OK | wx.ICON_INFORMATION)
+        dlg.ShowModal()
+        dlg.Destroy()
+        self.OnPreferences(None)
     
     def OnSubmit(self, e):
         config = controller.getConfig()
