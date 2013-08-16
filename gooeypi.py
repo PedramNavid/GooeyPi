@@ -1,9 +1,11 @@
 '''
-GooeyPi: Crossplatform Pyinstaller GUI 
-Created on Aug 15, 2013
-Pedram Roshdinavid: pedram . navid at gmail dot com
-Version: 0.1b
-Not yet tested on Linux/Mac platforms. 
+gooeypi.py 
+GooeyPi: A Crossplatform Pyinstaller GUI front-end
+Copyright (C) 2013 Pedram Navid 
+pedram.navid@gmail.com
+Comments, issues, requests, and forks welcome: https://github.com/multiphrenic/GooeyPi
+Released under GPL v2. See LICENSE file for details.
+
 '''
 import wx
 import wx.lib.filebrowsebutton as filebrowse
@@ -24,7 +26,7 @@ def init_logging():
         )
     if not hasattr(sys, 'frozen'):
         console = logging.StreamHandler(sys.stdout)
-        console.setLevel(logging.DEBUG)
+        console.setLevel(logging.INFO)
         formatter = logging.Formatter(
             '%(asctime)s %(levelname)s %(message)s',
             '%H:%M:%S',
