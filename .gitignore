@@ -35,4 +35,6 @@ nosetests.xml
 .pydevproject
 
 *.ini
-log.txt
+log.*
+*.spec
+
