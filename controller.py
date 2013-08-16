@@ -36,7 +36,7 @@ def getConfig():
     config = configobj.ConfigObj(inifile, unrepr=True, configspec='configspec.ini')
     validator = Validator()
     result = config.validate(validator)
-    if result: 
+    if result == True: 
         return config
     else:
         raise Exception ("Config file is not valid.") 
