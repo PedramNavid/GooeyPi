@@ -99,8 +99,9 @@ class GooeyPi(wx.Frame):
         pass
     
     def OnSubmit(self, e):
-        flags = ['python2'] # TODO: fallback to python if python2 is not available
         config = controller.getConfig()
+        flags = []
+        flags.append(sys.executable) # Python executable to run pyinstaller
         flags.append(os.path.join(config['pyidir'], 'pyinstaller.py'))
         if config['noconfirm']:
             flags.append('--noconfirm')
@@ -124,7 +125,6 @@ class GooeyPi(wx.Frame):
         logging.debug('calling subprocess {}'.format(flags))
         for line in self.CallInstaller(flags):
             self.txtresults.AppendText(line)
-
         
     def CallInstaller(self, flags):
         p = subprocess.Popen(flags, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
