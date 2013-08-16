@@ -36,7 +36,7 @@ To Do
 - Move the pyinstaller subprocess to its own thread
 - Provide option for manual flags
 - Test on ~~Linux~~ / Mac
+- Autodetect Python2 command line. **fixed??**
 - ~~Fix some bad path code (should be using os.path.join)~~
-- Fix preferences not saving on Linux
-- Fix pyinstaller path not saving
-- Autodetect Python2 command line. 
+- ~~Fix preferences not saving on Linux~~
+- ~~Fix pyinstaller path not saving~~
