@@ -100,7 +100,7 @@ class GooeyPi(wx.Frame):
         pass
 
     def CheckFirstRun(self):
-        config = controllger.getConfig()
+        config = controller.getConfig()
         if config['pyidir'] == '':
             dlg = wx.MessageDialog(None, 'Looks like this is your first run of GooeyPi.\n\
     Please select the Pyinstaller directory.', 'FIrst load', wx.OK | wx.ICON_INFORMATION)
