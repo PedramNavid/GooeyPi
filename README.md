@@ -9,13 +9,13 @@ Prerequisites
 ------------
 
 *Required*
--wxPython >= 2.9.4.0
--Python >= 2.7.3 (not compatible with Python3)
--PyInstaller >= 2.1 
--configobj >= 4.7.2
+- wxPython >= 2.9.4.0
+- Python >= 2.7.3 (not compatible with Python3)
+- PyInstaller >= 2.1 
+- configobj >= 4.7.2
 
 *Optional*
--UPX >=3.09
+- UPX >=3.09
 
 
 Installation
