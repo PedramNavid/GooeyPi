@@ -93,11 +93,12 @@ class Preferences(wx.Dialog):
         pass
     
     def CheckUPX(self):
-        upxname = 'upx.exe' # Fix this for non-Windows platforms
-        if os.path.exists(os.path.join(self.upx.GetValue(),upxname)) or self.upx.GetValue() == '':
+        upxname = ('upx.exe', 'upx')
+        # Test if anything in upxname is found in the upx directory provided. 
+        if [i for i in upxname if i in os.listdir(self.upx.GetValue())] or self.upx.GetValue() == '':
             return True
         else:
-            dial = wx.MessageDialog(None, 'UPX.exe not found. Please check path and try again, or leave blank.',
+            dial = wx.MessageDialog(None, 'UPX binary not found. Please check path and try again, or leave blank.',
                                      'Path not found?', 
             wx.OK | wx.ICON_ERROR)
             dial.ShowModal()
