@@ -12,6 +12,7 @@ Prerequisites
 wxPython >= 2.9.4.0
 Python >= 2.7.3 (not compatible with Python3)
 PyInstaller >= 2.1 
+configobj >= 4.7.2
 
 *Optional*
 UPX >=3.09
