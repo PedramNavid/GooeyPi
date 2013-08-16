@@ -6,9 +6,10 @@ Created on Aug 7, 2013
 import configobj
 import os
 import sys
+from validate import Validator
  
 appPath = os.path.abspath(os.path.dirname(os.path.join(sys.argv[0])))
-inifile = os.path.join(appPath, "gooeypi.ini")
+inifile = os.path.join(appPath, "settings.ini")
  
 def createConfig():
     """
@@ -32,4 +33,10 @@ def getConfig():
     if not os.path.exists(inifile):
         open(inifile, 'w').close()
         createConfig()
-    return configobj.ConfigObj(inifile, unrepr=True)
+    config = configobj.ConfigObj(inifile, unrepr=True, configspec='configspec.ini')
+    validator = Validator()
+    result = config.validate(validator)
+    if result: 
+        return config
+    else:
+        raise Exception ("Config file is not valid.") 

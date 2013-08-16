@@ -33,8 +33,7 @@ nosetests.xml
 .mr.developer.cfg
 .project
 .pydevproject
-
-*.ini
+settings.ini
 log*.*
 *.spec
 
