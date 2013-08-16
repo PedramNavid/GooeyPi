@@ -13,7 +13,7 @@ class Preferences(wx.Dialog):
     def __init__(self, *args, **kw):
         super(Preferences, self).__init__(*args, **kw)
         self.InitUI()
-        self.SetSize((380,260))
+        self.SetSize((380,290))
         self.SetTitle("Preferences")
         
     def InitUI(self):
