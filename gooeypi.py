@@ -103,7 +103,7 @@ class GooeyPi(wx.Frame):
         config = controller.getConfig()
         if config['pyidir'] == '':
             dlg = wx.MessageDialog(None, 'Looks like this is your first run of GooeyPi.\n\
-    Please select the Pyinstaller directory.', 'FIrst load', wx.OK | wx.ICON_INFORMATION)
+    Please select the Pyinstaller directory.', 'First time setup', wx.OK | wx.ICON_INFORMATION)
             dlg.ShowModal()
             dlg.Destroy()
             self.OnPreferences(None)
@@ -126,8 +126,7 @@ class GooeyPi(wx.Frame):
         flags.append('--distpath=' + os.path.dirname(self.fbb.GetValue())) # Output to same dir as script. 
         if self.fbb.GetValue() == '':
             dlg = wx.MessageDialog(None, 'No File Selected! Please select a Python script before proceeding',
-                                     'No file selected', 
-            wx.OK | wx.ICON_ERROR)
+                                     'No file selected', wx.OK | wx.ICON_ERROR)
             dlg.ShowModal()
             dlg.Destroy()
             return
@@ -136,17 +135,6 @@ class GooeyPi(wx.Frame):
         for line in self.CallInstaller(flags):
             self.txtresults.AppendText(line)
         
-    def CallInstaller(self, flags):
-        p = subprocess.Popen(flags, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-        while(True):
-            retcode = p.poll()
-            line = p.stdout.readline()
-            yield line
-            if(retcode is not None):
-                yield ("Pyinstaller returned return code: {}".format(retcode))
-                break
-                
-
     def OnQuit(self, e):
         self.Close()
     
@@ -158,6 +146,16 @@ class GooeyPi(wx.Frame):
     def OnOptions(self, e):
         self.OnPreferences(e)
 
+    def CallInstaller(self, flags):
+        p = subprocess.Popen(flags, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        while(True):
+            retcode = p.poll()
+            line = p.stdout.readline()
+            yield line
+            if(retcode is not None):
+                yield ("Pyinstaller returned return code: {}".format(retcode))
+                break
+ 
 if __name__ == '__main__':
     init_logging()
     get_config()

@@ -114,7 +114,3 @@ class Preferences(wx.Dialog):
             dial.ShowModal()
             dial.Destroy()
             return False
-            
-        
-
-    
