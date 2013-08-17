@@ -45,13 +45,13 @@ Usage
 To Do
 -----
 - Provide options for build/dist folder destinations
-- Move the pyinstaller subprocess to its own thread
 - Provide option for manual flags
 - Test on ~~Linux~~ / Mac
-- Autodetect Python2 command line. **fixed??**
+- ~~Autodetect Python2 command line~~
 - ~~Fix some bad path code (should be using os.path.join)~~
 - ~~Fix preferences not saving on Linux~~
 - ~~Fix pyinstaller path not saving~~
+- ~~Move the pyinstaller subprocess to its own thread~~ compromised by refreshing GUI as lines are output
 
 Contributing
 ------------
