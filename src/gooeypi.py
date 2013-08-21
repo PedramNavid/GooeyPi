@@ -153,6 +153,7 @@ class GooeyPi(wx.Frame):
         while(True):
             retcode = p.poll()
             line = p.stdout.readline()
+            wx.Yield()
             yield line
             if(retcode is not None):
                 yield ("Pyinstaller returned return code: {}".format(retcode))
