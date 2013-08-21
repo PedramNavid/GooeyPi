@@ -110,29 +110,14 @@ class GooeyPi(wx.Frame):
             dlg.Destroy()
             self.OnPreferences(None)
     
-    def OnSubmit(self, e):
-        config = controller.getConfig()
-        flags = []
-        flags.append(sys.executable) # Python executable to run pyinstaller
-        flags.append(os.path.join(config['pyidir'], 'pyinstaller.py'))
-        if config['noconfirm']:
-            flags.append('--noconfirm')
-        if config['singlefile']:
-            flags.append('--onefile')
-        if config['ascii']:
-            flags.append('--ascii')
-        if config['windowed']:
-            flags.append('--noconsole')
-        if config['upxdir'] != '':
-            flags.append('--upx-dir=' + config['upxdir'])
-        flags.append('--distpath=' + os.path.dirname(self.fbb.GetValue())) # Output to same dir as script. 
+    def OnSubmit(self, e):    
         if self.fbb.GetValue() == '':
             dlg = wx.MessageDialog(None, 'No File Selected! Please select a Python script before proceeding',
                                      'No file selected', wx.OK | wx.ICON_ERROR)
             dlg.ShowModal()
             dlg.Destroy()
             return
-        flags.append(self.fbb.GetValue())
+        flags = utils.getflags(self.fbb.GetValue())
         logging.debug('calling subprocess {}'.format(flags))
         for line in self.CallInstaller(flags):
             self.txtresults.AppendText(line)
