@@ -95,7 +95,7 @@ class Preferences(wx.Dialog):
     def CheckUPX(self):
         upxname = ('upx.exe', 'upx')
         # Test if anything in upxname is found in the upx directory provided. 
-        if [i for i in upxname if i in os.listdir(self.upx.GetValue())] or self.upx.GetValue() == '':
+        if self.upx.GetValue() == '' or [i for i in upxname if i in os.listdir(self.upx.GetValue())] :
             return True
         else:
             dial = wx.MessageDialog(None, 'UPX binary not found. Please check path and try again, or leave blank.',

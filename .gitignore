@@ -38,3 +38,4 @@ log*.*
 *.spec
 *.egg-info
 dist
+gooeypi.ini
