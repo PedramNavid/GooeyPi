@@ -15,6 +15,7 @@ import logging
 import controller
 import pref
 import os
+import util
 
 def init_logging():
     logging.basicConfig(
@@ -117,7 +118,7 @@ class GooeyPi(wx.Frame):
             dlg.ShowModal()
             dlg.Destroy()
             return
-        flags = utils.getflags(self.fbb.GetValue())
+        flags = util.getflags(self.fbb.GetValue())
         logging.debug('calling subprocess {}'.format(flags))
         for line in self.CallInstaller(flags):
             self.txtresults.AppendText(line)
