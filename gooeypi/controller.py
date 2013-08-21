@@ -1,8 +1,3 @@
-'''
-Created on Aug 7, 2013
-
-@author: 813365079
-'''
 import configobj
 import os
 import sys
