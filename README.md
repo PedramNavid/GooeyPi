@@ -22,7 +22,7 @@ Prerequisites
 *Required*
 - wxPython >= 2.9.4.0
 - Python >= 2.7.3 (not compatible with Python3)
-- PyInstaller >= 2.1 (development version. Support for 2.0 is coming soon!)
+- PyInstaller >= 2.0 (PyInstaller 2.1 development version recommended)  
 - configobj >= 4.7.2
 
 *Optional*
