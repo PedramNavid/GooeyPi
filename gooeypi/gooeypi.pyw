@@ -66,7 +66,7 @@ class GooeyPi(wx.Frame):
         self.Bind(wx.EVT_MENU, self.OnPreferences, prefs)
 
         self.fbb = filebrowse.FileBrowseButton(self.panel, -1, size=(350,-1),  labelText='Select Script:',
-                    fileMask='*.py; *.pyw', changeCallback = self.fbbCallback)
+                    fileMask="Python Source Files (*.py; *.pyw)|*.pyw;*.py", changeCallback = self.fbbCallback)
 
         self.txtresults = wx.TextCtrl(self.panel, size=(420,200),
                                       style=wx.TE_MULTILINE|wx.TE_READONLY)
