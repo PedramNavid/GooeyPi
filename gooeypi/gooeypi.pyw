@@ -1,4 +1,3 @@
-#!/usr/bin/python2
 '''
 gooeypi.py 
 GooeyPi: A Crossplatform Pyinstaller GUI front-end
