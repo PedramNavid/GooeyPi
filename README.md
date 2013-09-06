@@ -47,6 +47,8 @@ Usage
 
 To Do
 -----
+- Save window size preferences
+- Setup.py to enable pip installation.
 - Provide options for build/dist folder destinations
 - Provide option for manual flags
 - Test on ~~Linux~~ / Mac
