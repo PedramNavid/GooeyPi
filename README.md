@@ -2,7 +2,10 @@ GooeyPi
 =======
 Simple wxPython-based crossplatform Pyinstaller GUI front-end. Supports UPX, as well as some of the most common Pyinstaller options.
 
-Currently only tested on Windows, but plan on testing on Linux and Mac OS X shortly.
+Tested on both Linux and Windows platforms, but is designed to work with Max OS X, though would appreciate input from any Mac users on how (or if) it works.
+
+![Screenshot](/screenshot.png "Screenshot")
+
 
 Features
 --------
