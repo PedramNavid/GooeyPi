@@ -18,6 +18,7 @@ def createConfig():
     config['windowed'] = False
     config['upxdir'] = ''
     config['pyidir'] = ''
+    config['pyscript'] = ''
     config.write()
  
 #----------------------------------------------------------------------

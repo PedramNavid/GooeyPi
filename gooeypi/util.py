@@ -13,7 +13,7 @@ def getflags(fname):
     config = controller.getConfig()
     flags=[]
     flags.append(sys.executable) # Python executable to run pyinstaller
-    flags.append(os.path.join(config['pyidir'], 'pyinstaller.py'))
+    flags.append(os.path.join(config['pyidir'], config['pyscript']))
     if config['noconfirm']:
         flags.append('--noconfirm')
     if config['singlefile']:

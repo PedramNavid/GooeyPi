@@ -101,7 +101,13 @@ class Preferences(wx.Dialog):
             return False
         
     def CheckPyi(self):
-        if os.path.exists(os.path.join(self.pyi.GetValue() , 'pyinstaller.py')):
+        pyiname = ('pyinstaller.py', 'pyinstaller')
+        pyscript = [i for i in pyiname if i in os.listdir(self.pyi.GetValue())]
+        if pyscript:
+            config = controller.getConfig()
+            config['pyscript'] = pyscript[0]
+            logging.debug('Pyinstaller script: {} saved'.format(pyscript))
+            config.write()
             return True
         else:
             dial = wx.MessageDialog(None, 'pyinstaller.py not found. Please check path.',
