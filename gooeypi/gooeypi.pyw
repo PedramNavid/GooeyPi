@@ -44,7 +44,7 @@ class GooeyPi(wx.Frame):
     def __init__(self, *args, **kwargs):
         super(GooeyPi, self).__init__(*args, **kwargs)
         self.InitUI()
-        self.SetSize((460,350))
+        self.SetSize((800,350))
         self.SetTitle('GooeyPi - PyInstaller GUI')
         self.Show()
         self.CheckFirstRun()
