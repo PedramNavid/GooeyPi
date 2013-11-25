@@ -29,7 +29,20 @@ def getConfig():
     if not os.path.exists(inifile):
         open(inifile, 'w').close()
         createConfig()
-    config = configobj.ConfigObj(inifile, unrepr=True, configspec='configspec.ini')
+        
+    localDir = os.path.dirname(os.path.realpath(sys.argv[0]))
+    if not os.path.exists(localDir+'\\configspec.ini'):
+        conf_ini = file(localDir+'\\configspec.ini','w')
+        conf_ini.write("noconfirm = boolean(default=False)\n")
+        conf_ini.write("singlefile = boolean(default=False)\n")
+        conf_ini.write("ascii = boolean(default=False)\n")
+        conf_ini.write("windowed = boolean(default=False)\n")
+        conf_ini.write("upxdir = string(default='')\n")
+        conf_ini.write("pyidir = string(default='')")
+        conf_ini.close()
+        
+        
+    config = configobj.ConfigObj(inifile, unrepr=True, configspec=localDir+'\\configspec.ini')
     validator = Validator()
     result = config.validate(validator)
     if result == True: 
